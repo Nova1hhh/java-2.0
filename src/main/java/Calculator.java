@@ -36,16 +36,16 @@ public class Calculator {
         String operation;
         System.out.println("Выберите операцию: +, -, /, *");
         operation = scanner.next();
-        if (val2 != 0) {
+        if (val2 == 0 && operation.equals("/")) {
+            System.out.println("К сожалению, этот калькулятор не умеет делить на 0 =(\nПопобобуйте еще раз");
+            result();
+        } else {
             switch (operation) {
                 case "+" -> System.out.printf("Сумма равна %.4f", addition(val1, val2));
                 case "-" -> System.out.printf("Разность равна %.4f", subtraction(val1, val2));
                 case "*" -> System.out.printf("Произведение равно %.4f", multiplication(val1, val2));
                 case "/" -> System.out.printf("Частное равно %.4f", division(val1, val2));
             }
-        } else {
-            System.out.println("К сожалению, этот калькулятор не умеет делить на 0 =(\nПопобобуйте еще раз");
-            result();
         }
     }
 }
