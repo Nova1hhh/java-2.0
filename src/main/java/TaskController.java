@@ -1,18 +1,19 @@
 import task3.Calculator;
 import task3.MaxElement;
-import task4.Holiday.Gift;
+import task4.holiday.Gift;
 import task4.swap.Swap;
 
 import java.util.Scanner;
 
 /**
  * @author Николай
- * @version 1.1
+ * @version 4.0
  */
-class Base {
+class TaskController {
     public static void main(String[] args) {
         System.out.println("Выберите задание: 1 - калькулятор; 2 - поиск максимального слова в строке; " +
-                " 3 - замена максимального и минимального элементов массива местами");
+                " 3 - замена максимального и минимального элементов массива местами\n" +
+                "4 - задание про подарок(4.2)");
         Scanner scanner = new Scanner(System.in);
         int operation = scanner.nextInt();
         if (operation == 1) {
@@ -25,8 +26,7 @@ class Base {
             Swap swap = new Swap();
             swap.swap();
         } else if (operation == 4) {
-            Gift gift = new Gift();
-            gift.getTotal();
+            Gift.getGiftInfo();
         }
     }
 }
