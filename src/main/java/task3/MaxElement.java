@@ -1,3 +1,5 @@
+package task3;
+
 import java.util.Scanner;
 
 public class MaxElement {

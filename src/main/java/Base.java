@@ -1,4 +1,7 @@
-import task4.Swap;
+import task3.Calculator;
+import task3.MaxElement;
+import task4.Holiday.Gift;
+import task4.swap.Swap;
 
 import java.util.Scanner;
 
@@ -21,6 +24,9 @@ class Base {
         } else if (operation == 3) {
             Swap swap = new Swap();
             swap.swap();
+        } else if (operation == 4) {
+            Gift gift = new Gift();
+            gift.getTotal();
         }
     }
 }
