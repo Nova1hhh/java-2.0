@@ -1,7 +1,11 @@
 import task3.Calculator;
 import task3.MaxElement;
-import task4.holiday.Gift;
+import task4.holiday.Cake;
+import task4.holiday.Candy;
+import task4.holiday.JellyBeans;
+import task4.holiday.Sweetness;
 import task4.swap.Swap;
+
 
 import java.util.Scanner;
 
@@ -26,7 +30,21 @@ class TaskController {
             Swap swap = new Swap();
             swap.swap();
         } else if (operation == 4) {
-            Gift.getGiftInfo();
+            Cake cake1 = new Cake("киевский", 2, 1500, "Большой");
+            Cake cake2 = new Cake();
+            cake2.setTitle("московский");
+            cake2.setWeight(1.5);
+            cake2.setPrice(1050.2);
+            cake2.setSize("Средний");
+            Candy candy1 = new Candy("Шипучки", 1.5, 120.5, "Roshen", 300);
+            Candy candy2 = new Candy("Twix mini", 3.5, 3000, "Mars inc.", 600);
+            JellyBeans jelly1 = new JellyBeans("Бон Пари", 2.3, 1000, "Червячки");
+
+            Sweetness[] gift = {cake1, cake2, candy1, candy2, jelly1};
+
+            for (Sweetness tmp : gift) {
+                System.out.println(tmp.toString());
+            }
         }
     }
 }

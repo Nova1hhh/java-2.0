@@ -1,62 +1,34 @@
 package task4.holiday;
 
-public class Candy {
-    private double price;
-    private double weight;
-    private String taste;
+public class Candy extends Sweetness{
 
-    public Candy(double price, double weight, String taste) {
-        this.price = price;
-        this.weight = weight;
-        this.taste = taste;
+    private String manufacturer;
+    private double calories;
+
+    public Candy(String title, double weight, double price, String manufacturer, double calories) {
+        super(title, weight, price);
+        this.manufacturer = manufacturer;
+        this.calories = calories;
     }
 
-    public double getPrice() {
-        return price;
+    public String getManufacturer() {
+        return manufacturer;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    public void setManufacturer(String manufacturer) {
+        this.manufacturer = manufacturer;
     }
 
-    public double getWeight() {
-        return weight;
+    public double getCalories() {
+        return calories;
     }
 
-    public void setWeight(double weight) {
-        this.weight = weight;
+    public void setCalories(double calories) {
+        this.calories = calories;
     }
 
-    public String getTaste() {
-        return taste;
+    @Override
+    public String toString() {
+        return "Конфеты: " + super.toString() + ", производитель = " + manufacturer + ", калорийность = " + calories + ";";
     }
-
-    public void setTaste(String taste) {
-        this.taste = taste;
-    }
-
-    public static double getCandyWeight(Candy[] candies) {
-        double result = 0;
-        for (Candy candy : candies) {
-            result += candy.getWeight();
-        }
-        return result;
-    }
-
-    public static double getCandyPrice(Candy[] candies) {
-        double result = 0;
-        for (Candy candy : candies) {
-            result += candy.getPrice();
-        }
-        return result;
-    }
-
-    public static String[] getCandyInfo(Candy[] candies) {
-        String[] result = new String[candies.length];
-        for (int i = 0; i < candies.length; i++) {
-            result[i] = candies[i].getTaste();
-        }
-        return result;
-    }
-
 }
