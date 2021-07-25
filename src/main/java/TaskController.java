@@ -42,6 +42,9 @@ class TaskController {
 
             Sweetness[] gift = {cake1, cake2, candy1, candy2, jelly1};
 
+            System.out.println("Общая цена подарка = " + Sweetness.getTotalPrice(gift));
+            System.out.println("Общий вес подарка = " + Sweetness.getTotalWeight(gift));
+
             for (Sweetness tmp : gift) {
                 System.out.println(tmp.toString());
             }
