@@ -1,3 +1,4 @@
+import oopCalculator.Base;
 import task3.Calculator;
 import task3.MaxElement;
 import task4.holiday.Cake;
@@ -17,7 +18,7 @@ class TaskController {
     public static void main(String[] args) {
         System.out.println("Выберите задание: 1 - калькулятор; 2 - поиск максимального слова в строке; " +
                 " 3 - замена максимального и минимального элементов массива местами\n" +
-                "4 - задание про подарок(4.2)");
+                "4 - задание про подарок(4.2); 5 - калькулятор ООП");
         Scanner scanner = new Scanner(System.in);
         int operation = scanner.nextInt();
         if (operation == 1) {
@@ -48,6 +49,8 @@ class TaskController {
             for (Sweetness tmp : gift) {
                 System.out.println(tmp.toString());
             }
+        } else if (operation == 5) {
+            Base.getResult();
         }
     }
 }
