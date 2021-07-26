@@ -1,4 +1,3 @@
-import oopCalculator.Base;
 import task3.Calculator;
 import task3.MaxElement;
 import task4.holiday.Cake;
@@ -6,6 +5,7 @@ import task4.holiday.Candy;
 import task4.holiday.JellyBeans;
 import task4.holiday.Sweetness;
 import task4.swap.Swap;
+import task5.CalculatorOOP;
 
 
 import java.util.Scanner;
@@ -50,7 +50,35 @@ class TaskController {
                 System.out.println(tmp.toString());
             }
         } else if (operation == 5) {
-            Base.getResult();
+            CalculatorOOP calculator = new CalculatorOOP();
+            calculator.setVal1(21.3);
+            calculator.setVal2(2);
+            calculator.setOp("*");
+            System.out.println(calculator);
+
+            CalculatorOOP cal1 = new CalculatorOOP(32, -2, "/");
+            System.out.println(cal1);
+
+            CalculatorOOP cal2 = new CalculatorOOP(123, 20, "+");
+            double someResult = cal2.getResult();
+            System.out.println(someResult);
+
+            CalculatorOOP cal3 = new CalculatorOOP();
+            cal3.setVal1(2);
+            cal3.setVal2(3);
+            cal3.setOp("*");
+            System.out.println(cal3);
+
+            CalculatorOOP cal4 = new CalculatorOOP();
+            cal4.setVal1(1);
+            cal4.setOp("+");
+            System.out.println(cal4);
+
+            CalculatorOOP cal5 = new CalculatorOOP();
+            cal5.setVal1(1);
+            cal5.setVal2(2);
+            Double someResult1 = cal5.getResult();
+            System.out.println(cal5);
         }
     }
 }
