@@ -6,19 +6,21 @@ import task4.holiday.JellyBeans;
 import task4.holiday.Sweetness;
 import task4.swap.Swap;
 import task5.CalculatorOOP;
+import task6.Task6;
 
-
+import java.io.FileNotFoundException;
+import java.util.Map;
 import java.util.Scanner;
 
 /**
  * @author Николай
- * @version 4.0
+ * @version 6
  */
 class TaskController {
     public static void main(String[] args) {
         System.out.println("Выберите задание: 1 - калькулятор; 2 - поиск максимального слова в строке; " +
                 " 3 - замена максимального и минимального элементов массива местами\n" +
-                "4 - задание про подарок(4.2); 5 - калькулятор ООП");
+                "4 - задание про подарок(4.2); 5 - калькулятор ООП; 6 - чтение из файла");
         Scanner scanner = new Scanner(System.in);
         int operation = scanner.nextInt();
         if (operation == 1) {
@@ -79,6 +81,21 @@ class TaskController {
             cal5.setVal2(2);
             Double someResult1 = cal5.getResult();
             System.out.println(cal5);
+        } else if (operation == 6) {
+            Task6 task6 = new Task6();
+            try {
+                System.out.println("Введите путь к файлу (например C://123.txt): ");
+                Scanner scanner1 = new Scanner(System.in);
+                String path = scanner1.next();
+                task6.readFromFile(path);
+                Map<String, Integer> map = task6.getStat();
+                System.out.println("Содержимое файла в остортированном виде: " + task6.getList());
+                System.out.println("Статистика по количеству слов в файле: " + map);
+                System.out.println("Наиболее часто повторяющиеся слова: " + task6.maxCount(map));
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
         }
+    scanner.close();
     }
 }
