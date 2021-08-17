@@ -25,7 +25,7 @@ public class Task6 {
     //    String path = scanner.next();
         File file = new File(path);
         Scanner fr = new Scanner(file);
-        List<String> tmp = new ArrayList<String>();
+        List<String> tmp = new ArrayList<>();
         while (fr.hasNext()) {
             tmp.add(fr.next());
         }
