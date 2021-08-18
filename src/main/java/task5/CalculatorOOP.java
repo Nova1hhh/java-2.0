@@ -20,6 +20,18 @@ public class CalculatorOOP {
         setResult(val1, val2, op);
     }
 
+    public Double getVal1() {
+        return val1;
+    }
+
+    public Double getVal2() {
+        return val2;
+    }
+
+    public String getOp() {
+        return op;
+    }
+
     private void setResult(Double val1, Double val2, String op) {
         try {
             if (val1 == null || val2 == null) {
