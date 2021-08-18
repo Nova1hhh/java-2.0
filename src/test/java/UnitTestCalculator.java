@@ -5,7 +5,7 @@ import task5.CalculatorOOP;
 public class UnitTestCalculator {
     Double val1 = -1000 + Math.random() * 1000;
     Double val2 = -1000 + Math.random() * 1000;
-    String[] operations = {"+", "-", "*"};
+    String[] operations = {"+", "-", "*", "/"};
     int indexOperation = (int) (Math.random() * 2);
     String op = operations[indexOperation];
     Double result;
@@ -15,6 +15,7 @@ public class UnitTestCalculator {
             case "+" -> result = val1 + val2;
             case "-" -> result = val1 - val2;
             case "*" -> result = val1 * val2;
+            case "/" -> result = val1 / val2;
         }
         return result;
     }
