@@ -2,6 +2,8 @@ import org.junit.Assert;
 import org.junit.Test;
 import task5.CalculatorOOP;
 
+import java.util.InputMismatchException;
+
 public class UnitTestCalculator {
     Double val1 = -1000 + Math.random() * 1000;
     Double val2 = -1000 + Math.random() * 1000;
@@ -54,29 +56,29 @@ public class UnitTestCalculator {
         Assert.assertEquals(val1, calculatorOOP.getVal1());
     }
 
-    @Test
+    @Test(expected = ArithmeticException.class)
     public void checkDivisionByZero(){
         CalculatorOOP calculatorOOP = new CalculatorOOP();
         calculatorOOP.setVal1(val1);
         calculatorOOP.setVal2(0);
         calculatorOOP.setOp("/");
-        Assert.assertNull(calculatorOOP.getResult());
+        calculatorOOP.getResult();
     }
 
-    @Test
+    @Test(expected = InputMismatchException.class)
     public void checkIncorrectOperation(){
         CalculatorOOP calculatorOOP = new CalculatorOOP();
         calculatorOOP.setVal1(val1);
         calculatorOOP.setVal2(val2);
         calculatorOOP.setOp("asdf");
-        Assert.assertNull(calculatorOOP.getResult());
+        calculatorOOP.getResult();
     }
 
-    @Test
+    @Test(expected = NullPointerException.class)
     public void checkIncorrectValues(){
         CalculatorOOP calculatorOOP = new CalculatorOOP();
         calculatorOOP.setOp(op);
-        Assert.assertNull(calculatorOOP.getResult());
+        calculatorOOP.getResult();
     }
 
 }

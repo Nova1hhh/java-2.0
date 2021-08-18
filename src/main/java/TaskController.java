@@ -9,7 +9,7 @@ import task5.CalculatorOOP;
 import task6.Task6;
 
 import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.util.InputMismatchException;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -53,50 +53,62 @@ class TaskController {
                 System.out.println(tmp.toString());
             }
         } else if (operation == 5) {
-            CalculatorOOP calculator = new CalculatorOOP();
-            calculator.setVal1(-21);
-            calculator.setVal2(2);
-            calculator.setOp("*");
-            System.out.println(calculator);
-
-//            CalculatorOOP cal1 = new CalculatorOOP(32.6 , -2, "/");
-//            System.out.println(cal1);
-
-            CalculatorOOP cal2 = new CalculatorOOP(123, 20, "-");
-            double someResult = cal2.getResult();
-            System.out.println(someResult);
-
-            CalculatorOOP cal3 = new CalculatorOOP();
-            cal3.setVal1(2.2);
-            cal3.setVal2(3);
-            cal3.setOp("*");
-            System.out.println(cal3);
-
+//            CalculatorOOP calculator = new CalculatorOOP();
+//            calculator.setVal1(-21);
+//            calculator.setVal2(2);
+//            calculator.setOp("*");
+//            System.out.println(calculator);
+//
+////            CalculatorOOP cal1 = new CalculatorOOP(32.6 , -2, "/");
+////            System.out.println(cal1);
+//
+//            CalculatorOOP cal2 = new CalculatorOOP(123, 20, "-");
+//            double someResult = cal2.getResult();
+//            System.out.println(someResult);
+//
+//            CalculatorOOP cal3 = new CalculatorOOP();
+//            cal3.setVal1(2.2);
+//            cal3.setVal2(3);
+//            cal3.setOp("*");
+//            System.out.println(cal3);
+//
             CalculatorOOP cal4 = new CalculatorOOP();
             cal4.setVal1(100);
             cal4.setOp("+");
-            System.out.println(cal4);
+            try {
+                System.out.println(cal4);
+            } catch (Exception e) {
+                System.err.println("Не заданы данные! val1 = " + cal4.getVal1() +
+                        " val2 = " + cal4.getVal2() + " " + e);
+            }
+//            CalculatorOOP cal5 = new CalculatorOOP();
+//            cal5.setVal1(111);
+//            cal5.setVal2(2222);
+//            //    Double someResult1 = cal5.getResult();
+//            System.out.println(cal5);
 
-            CalculatorOOP cal5 = new CalculatorOOP();
-            cal5.setVal1(111);
-            cal5.setVal2(2222);
-        //    Double someResult1 = cal5.getResult();
-            System.out.println(cal5);
-
-        //    int asd = 21/0;
-        //    System.out.println(asd);
+            //    int asd = 21/0;
+            //    System.out.println(asd);
 
             CalculatorOOP cal6 = new CalculatorOOP();
-            System.out.println("Введите первое число");
-            int val = scanner.nextInt();
-            cal6.setVal1(val);
-            System.out.println("Введите операцию");
-            String op = scanner.next();
-            cal6.setOp(op);
-            System.out.println("Введите второе число");
-            val = scanner.nextInt();
-            cal6.setVal2(val);
-            System.out.println(cal6);
+
+            System.out.println("Введите val1 operation val2:");
+            int val1, val2;
+            String op;
+
+            try {
+                val1 = scanner.nextInt();
+                op = scanner.next();
+                val2 = scanner.nextInt();
+                cal6.setVal1(val1);
+                cal6.setOp(op);
+                cal6.setVal2(val2);
+                System.out.println(cal6);
+            } catch (InputMismatchException e) {
+                System.err.println("Ошибка ввода! " + e);
+            } catch (ArithmeticException e) {
+                System.err.println("Деление на 0! " + e);
+            }
 
         } else if (operation == 6) {
             Task6 task6 = new Task6();
@@ -113,6 +125,6 @@ class TaskController {
                 e.printStackTrace();
             }
         }
-    scanner.close();
+        scanner.close();
     }
 }
