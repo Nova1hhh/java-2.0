@@ -33,9 +33,9 @@ public class UnitTestCalculator {
     @Test
     public void checkConstructorWithParams(){
         CalculatorOOP calculatorOOP = new CalculatorOOP(val1, val2, op);
-        Assert.assertEquals(val1, calculatorOOP.getVal1());
-        Assert.assertEquals(val2, calculatorOOP.getVal2());
-        Assert.assertEquals(op, calculatorOOP.getOp());
+//        Assert.assertEquals(val1, calculatorOOP.getVal1());
+//        Assert.assertEquals(val2, calculatorOOP.getVal2());
+//        Assert.assertEquals(op, calculatorOOP.getOp());
         Assert.assertEquals(expectedResult(), calculatorOOP.getResult());
     //    System.out.println(val1 + " " + val2 + " " + op);
     }
@@ -54,6 +54,9 @@ public class UnitTestCalculator {
     public void checkGetters(){
         CalculatorOOP calculatorOOP = new CalculatorOOP(val1, val2, op);
         Assert.assertEquals(val1, calculatorOOP.getVal1());
+        Assert.assertEquals(val2, calculatorOOP.getVal2());
+        Assert.assertEquals(op, calculatorOOP.getOp());
+        Assert.assertEquals(expectedResult(), calculatorOOP.getResult());
     }
 
     @Test(expected = ArithmeticException.class)
