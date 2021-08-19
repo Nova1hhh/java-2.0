@@ -22,6 +22,16 @@ public class UnitTestCalculator {
         return result;
     }
 
+    public Double expectedResult(String op){
+        switch (op) {
+            case "+" -> result = val1 + val2;
+            case "-" -> result = val1 - val2;
+            case "*" -> result = val1 * val2;
+            case "/" -> result = val1 / val2;
+        }
+        return result;
+    }
+
     @Test
     public void checkEmptyCalculator(){
         CalculatorOOP calculator = new CalculatorOOP();
@@ -82,6 +92,30 @@ public class UnitTestCalculator {
         CalculatorOOP calculatorOOP = new CalculatorOOP();
         calculatorOOP.setOp(op);
         calculatorOOP.getResult();
+    }
+
+    @Test
+    public void checkSum(){
+        CalculatorOOP calculatorOOP = new CalculatorOOP(val1, val2, "+");
+        Assert.assertEquals(expectedResult("+"), calculatorOOP.getResult());
+    }
+
+    @Test
+    public void checkSubtraction(){
+        CalculatorOOP calculatorOOP = new CalculatorOOP(val1, val2, "-");
+        Assert.assertEquals(expectedResult("-"), calculatorOOP.getResult());
+    }
+
+    @Test
+    public void checkMultiply(){
+        CalculatorOOP calculatorOOP = new CalculatorOOP(val1, val2, "*");
+        Assert.assertEquals(expectedResult("*"), calculatorOOP.getResult());
+    }
+
+    @Test
+    public void checkDivision(){
+        CalculatorOOP calculatorOOP = new CalculatorOOP(val1, val2, "/");
+        Assert.assertEquals(expectedResult("/"), calculatorOOP.getResult());
     }
 
 }

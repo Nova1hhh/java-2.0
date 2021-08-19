@@ -93,13 +93,13 @@ class TaskController {
             CalculatorOOP cal6 = new CalculatorOOP();
 
             System.out.println("Введите val1 operation val2:");
-            int val1, val2;
+            double val1, val2;
             String op;
 
             try {
-                val1 = scanner.nextInt();
+                val1 = scanner.nextDouble();
                 op = scanner.next();
-                val2 = scanner.nextInt();
+                val2 = scanner.nextDouble();
                 cal6.setVal1(val1);
                 cal6.setOp(op);
                 cal6.setVal2(val2);
