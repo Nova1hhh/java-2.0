@@ -118,4 +118,9 @@ public class UnitTestCalculator {
         Assert.assertEquals(expectedResult("/"), calculatorOOP.getResult());
     }
 
+    @Test
+    public void emptyTest(){
+
+    }
+
 }
